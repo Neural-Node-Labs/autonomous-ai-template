@@ -1,4 +1,4 @@
-# OMNIKON SEC·OPS — AI Memory System
+# OMNIKON SEC·OPS — AI Autonompus System
 
 > **Version: v1.0.0** | Python 3.11+ · TypeScript/Node 18+ · Java 17+ · Rust 1.75+
 
