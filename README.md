@@ -110,10 +110,10 @@ Every step is recorded in **ReasoningMemory (layer 2.5)** and injected back into
 
 ---
 
-## Repository Layout
+## Repository Layout TDB [Layout changed]
 
 ```
-memory-system/
+autonomous-ai-template/
 │
 ├── README.md                                    ← this file
 │
