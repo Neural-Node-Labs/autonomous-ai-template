@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.omnikon</groupId>
+  <artifactId>memory-manager</artifactId>
+  <version>1.0.2</version>
+  <packaging>jar</packaging>
+  <description>Production-grade tiered AI Memory Management System</description>
+
+  <properties>
+    <java.version>17</java.version>
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+    <maven.compiler.target>${java.version}</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <!-- Zero runtime dependencies — all stdlib -->
+
+  <build>
+    <plugins>
+      <!-- Fat JAR for the agent -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.3.0</version>
+        <configuration>
+          <archive>
+            <manifest>
+              <mainClass>agent.Agent</mainClass>
+            </manifest>
+          </archive>
+          <finalName>omnikon-agent</finalName>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
