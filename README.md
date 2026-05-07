@@ -120,12 +120,15 @@ autonomous-ai-template/
 ├── memory_manager.py                            ← Python core library (v3)
 │
 ├── python/                                      (no separate dir — file above is the lib)
+│   ├── memory_manager.py                             ← npm config
+│   └── agent.py    
 │
 ├── typescript/
 │   ├── package.json                             ← npm config
 │   ├── tsconfig.json                            ← TypeScript compiler config
 │   └── src/
 │       └── memoryManager.ts                     ← TypeScript core library (v3)
+│       └── agent.ts                             ← TypeScript agent (DeepSeek + ReAct + skills)
 │
 ├── java/
 │   ├── pom.xml                                  ← Maven build (Java 17, fat JAR)
@@ -141,26 +144,7 @@ autonomous-ai-template/
 │       ├── memory_manager.rs                     ← Rust core library (v1.0.0)
 │       └── agent.rs                              ← Rust agent (DeepSeek + ReAct + skills)
 │
-└── agent/
-    ├── python/
-    │   └── agent.py                             ← Python agent (DeepSeek + ReAct + skills)
-    │
-    ├── typescript/
-    │   └── src/
-    │       └── agent.ts                         ← TypeScript agent (DeepSeek + ReAct + skills)
-    │
-    └── java/
-        └── src/
-            └── main/
-                └── java/
-                    ├── rust/
-│   ├── Cargo.toml                                   ← Cargo build (Rust 1.75+)
-│   └── src/
-│       ├── memory_manager.rs                     ← Rust core library (v1.0.0)
-│       └── agent.rs                              ← Rust agent (DeepSeek + ReAct + skills)
-│
-└── agent/
-                        └── Agent.java           ← Java agent (DeepSeek + ReAct + skills)
+
 ```
 
 ---
@@ -181,8 +165,8 @@ autonomous-ai-template/
 
 ```bash
 # Minimum files needed:
-#   memory_manager.py
-#   agent/python/agent.py
+#   python/memory_manager.py
+#   python/agent.py
 ```
 
 ### 2. Create a virtual environment (recommended)
@@ -201,13 +185,13 @@ export DEEPSEEK_API_KEY=sk-...     # get one at https://platform.deepseek.com/
 ### 4. Run the agent
 
 ```bash
-python agent/python/agent.py
+python python/agent.py
 
 # Custom archive path:
-python agent/python/agent.py --archive /data/my_memory.jsonl
+python python/agent.py --archive /data/my_memory.jsonl
 
 # Verbose logging:
-LOG_LEVEL=DEBUG python agent/python/agent.py
+LOG_LEVEL=DEBUG python python/agent.py
 ```
 
 ### 5. Run the memory library self-tests
